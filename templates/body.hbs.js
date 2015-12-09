@@ -19,7 +19,9 @@ var argv = require('yargs')
   .epilog('OpenFn 2015')
   .argv;
 
-var Adaptor = require("{{adaptorModule}}");
+
+console.log("Running expression using: {{moduleName}}/{{adaptorName}}");
+var Adaptor = require("{{moduleName}}")["{{adaptorName}}"];
 
 var configuration = require(argv.configuration);
 var data = require(argv.data);
@@ -28,8 +30,13 @@ var data = require(argv.data);
 var {{{ this }}} = Adaptor.{{{ this }}};
 {{/each}}
 
+var state = {
+  configuration: configuration,
+  data: data
+}
+
 execute(
-  configuration, data,
+  state,
   {{{ source }}}
 );
 
