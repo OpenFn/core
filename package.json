@@ -1,6 +1,6 @@
 {
   "name": "fn-lang",
-  "version": "0.1.0",
+  "version": "0.2.0-beta",
   "description": "OpenFn Language Toolchain",
   "main": "index.js",
   "bin": "./lib/cli.js",
