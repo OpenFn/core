@@ -1,4 +1,4 @@
-FnLang
+Diesl, formerly `FnLang`
 ======
 
 Language toolkit for OpenFn.
