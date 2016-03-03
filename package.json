@@ -12,7 +12,7 @@
     "templates/"
   ],
   "author": "Stuart Corbishley",
-  "license": "GPL-2.0",
+  "license": "LGPLv3",
   "dependencies": {
     "handlebars": "^4.0.4",
     "moment": "^2.10.6",
