@@ -11,7 +11,7 @@
     "lib/",
     "templates/"
   ],
-  "author": "Stuart Corbishley",
+  "author": "Open Function Group",
   "license": "LGPLv3",
   "dependencies": {
     "handlebars": "^4.0.4",
