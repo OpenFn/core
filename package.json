@@ -1,6 +1,6 @@
 {
   "name": "fn-lang",
-  "version": "0.2.0-beta",
+  "version": "0.3.0-beta",
   "description": "OpenFn Language Toolchain",
   "main": "index.js",
   "bin": "./lib/cli.js",
@@ -14,8 +14,11 @@
   "author": "Stuart Corbishley",
   "license": "GPL-2.0",
   "dependencies": {
+    "ast-types": "^0.8.16",
+    "estemplate": "^0.5.1",
     "handlebars": "^4.0.4",
     "moment": "^2.10.6",
+    "recast": "^0.11.5",
     "yargs": "^3.30.0"
   }
 }
