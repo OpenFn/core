@@ -21,7 +21,7 @@ Returns the output to `STDOUT`, allowing you check for failure/success.
 
 ### Wrap an expression in a script
 
-`fn-lang compile -l language-salesforce.default -f expression.js`  
+`fn-lang compile -l language-salesforce.default -d doclet.json -f expression.js`  
 
 Returns a wrapped expression to `STDOUT`, allowing you check the output.
 
