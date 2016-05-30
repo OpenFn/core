@@ -1,6 +1,6 @@
 {
-  "name": "fn-lang",
-  "version": "0.3.0-beta",
+  "name": "diesl",
+  "version": "0.4.0",
   "description": "OpenFn Language Toolchain",
   "main": "index.js",
   "bin": "./lib/cli.js",
@@ -8,16 +8,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "lib/",
-    "templates/"
+    "lib/"
   ],
   "author": "Stuart Corbishley",
   "license": "GPL-2.0",
   "dependencies": {
     "ast-types": "^0.8.16",
     "estemplate": "^0.5.1",
-    "handlebars": "^4.0.4",
-    "moment": "^2.10.6",
     "recast": "^0.11.5",
     "yargs": "^3.30.0"
   },
