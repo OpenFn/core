@@ -1,6 +1,6 @@
 {
   "name": "diesl",
-  "version": "0.4.0",
+  "version": "0.4.0-pre",
   "description": "OpenFn Language Toolchain",
   "main": "index.js",
   "bin": "./lib/cli.js",
@@ -14,6 +14,7 @@
   "license": "GPL-2.0",
   "dependencies": {
     "ast-types": "^0.8.16",
+    "doclet-query": "github:openfn/doclet-query#v0.1.0",
     "estemplate": "^0.5.1",
     "recast": "^0.11.5",
     "yargs": "^3.30.0"
