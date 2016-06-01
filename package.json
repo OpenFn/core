@@ -1,6 +1,6 @@
 {
   "name": "diesl",
-  "version": "0.4.0-pre",
+  "version": "0.4.1",
   "description": "OpenFn Language Toolchain",
   "main": "index.js",
   "bin": "./lib/cli.js",
