@@ -1,6 +1,6 @@
 {
-  "name": "fn-lang",
-  "version": "0.2.0-beta",
+  "name": "diesl",
+  "version": "0.4.2",
   "description": "OpenFn Language Toolchain",
   "main": "index.js",
   "bin": "./lib/cli.js",
@@ -8,14 +8,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "lib/",
-    "templates/"
+    "lib/"
   ],
   "author": "Open Function Group",
   "license": "LGPLv3",
   "dependencies": {
-    "handlebars": "^4.0.4",
-    "moment": "^2.10.6",
+    "ast-types": "^0.8.16",
+    "doclet-query": "github:openfn/doclet-query#v0.1.0",
+    "estemplate": "^0.5.1",
+    "recast": "^0.11.5",
     "yargs": "^3.30.0"
+  },
+  "engines": {
+    "node": ">= 6.1.0"
   }
 }
