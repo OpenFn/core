@@ -5,7 +5,8 @@
   "main": "index.js",
   "bin": "./lib/cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "test:watch": "mocha -w"
   },
   "files": [
     "lib/"
@@ -20,6 +21,11 @@
     "yargs": "^3.30.0"
   },
   "engines": {
-    "node": ">= 6.1.0"
+    "node": ">= 6.5.0"
+  },
+  "devDependencies": {
+    "deep-eql": "0.1.3",
+    "eslint": "3.4.0",
+    "mocha": "3.0.2"
   }
 }
