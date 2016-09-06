@@ -5,8 +5,8 @@
   "main": "index.js",
   "bin": "./lib/cli.js",
   "scripts": {
-    "test": "mocha",
-    "test:watch": "mocha -w"
+    "test": "mocha --recursive",
+    "test:watch": "mocha -w --recursive"
   },
   "files": [
     "lib/"
