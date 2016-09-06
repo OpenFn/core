@@ -14,7 +14,7 @@ Examples
 
 ### Execute an expression
 
-`diesl compile -l salesforce -e expression.js -d data.json -c configuration.json`  
+`diesl compile -l language-salesforce.Adaptor -e expression.js -s data.json`  
 Returns the output to `STDOUT`, allowing you check for failure/success.
 
 ### Wrap an expression in a script
@@ -28,31 +28,36 @@ diesl compile -l salesforce -f expression.js -o myExpression.js
 cat state.json | node myExpression.js
 ```
 
-Compile
+Execute
 -------
 
-`diesl compile`  
+`diesl execute`  
 
 Used to convert an expression into an executable script.
 
 Options:
 ```
--l, --language  language/adaptor                                    [required]
--d, --doclet    path to JSDoc output for language pack (JSON)       [required]
--f, --file      target file to compile                              [required]
--o, --output    send output to a file
+-l, --language    resolvable language/adaptor path                [required]
+-e, --expression  target expression to execute                    [required]
+-s, --state       Path to initial state file.                     [required]
+-o, --output      Path to write result from expression **TODO**
 ```
 
-The current compiler outputs a script that takes initial state via `STDIN`.
-E.g. `echo '{}' | node script.js`  
+Examples:
 
-It also can accept a `STATE_PATH` environment variable which writes the final
-state to disk on success.  
-E.g. `echo '{}' | STATE_PATH=/tmp/final_state.json node script.js`  
+Use a module in the parent folder, and pick out the `Adaptor` member.
+```
+diesel execute -l ../language-http.Adaptor -e exp.js -s state.json
+```
 
+Use a npm installed module, and pick out the `Adaptor` member.
+```
+diesel execute -l language-http.Adaptor -e exp.js -s state.json
+```
 
-TODO
-----
+Compile
+-------
 
-- [ ] Validate an expression against the specific language/version
-- [ ] Execute an expression in-browser for testing
+Currently deprecated in this release.
+Execute now does compilation and execution, by unifying these behaviours
+`compile` will be reimplemented to offer deeper debugging tools.

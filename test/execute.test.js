@@ -19,13 +19,12 @@ describe("Execute", () => {
 
   describe("when given an expression and state", () => {
     it("returns", () => {
-      Execute({
+      let result = Execute({
         expression: `add(1)(state)`,
         state: 1,
         sandbox: { add: num => state => { return state + num } }
-      }).then(state => {
-        assert.equal(state, 2)
       })
+      assert.equal(result, 2)
 
     })
   })
