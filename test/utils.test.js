@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { modulePath } = require('../lib/utils');
+const { modulePath, writeJSON, readFile } = require('../lib/utils');
 
 describe("Utils", () => {
 
@@ -35,7 +35,12 @@ describe("Utils", () => {
       isRelative: true
     })
 
+  })
 
+  it(".writeJSON", () => {
+    return writeJSON('/tmp/output.json', {a: 1})
+      .then(() => readFile('/tmp/output.json'))
+      .then((str) => assert.deepEqual({a: 1}, JSON.parse(str)))
   })
 })
 

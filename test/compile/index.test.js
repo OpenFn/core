@@ -5,13 +5,6 @@ const {
 } = require('../../lib/compile/transforms');
 
 describe("Compile", () => {
-  it("does something", () => {
-
-    let code = `each([1,2,3], (i) => { return i++ })`
-
-    new Compile(code, []);
-  })
-
   it("throws an error when a transform doesn't return the ast", () => {
     assert.throws(
       () => { new Compile("", [function() {}]) },
