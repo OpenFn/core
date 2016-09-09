@@ -58,7 +58,7 @@ describe("Transforms", () => {
       assertCodeEqual(result, [
         "(function() {",
         "  return execute(foo(), bar(), baz());",
-        "})()"
+        "})();"
       ].join("\n"))
     })
   })
