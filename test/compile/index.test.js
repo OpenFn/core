@@ -43,6 +43,12 @@ describe("Transforms", () => {
       result = new Compile(`foo();bar();baz();`, [wrapRootExpressions('execute')])
       assertCodeEqual(result, 'execute(foo(), bar(), baz());')
     })
+
+    it("won't break if the last character is a space", () => {
+      const code = `each() `
+      result = new Compile(code, [wrapRootExpressions('execute')])
+      assertCodeEqual(result, 'execute(each());')
+    })
   })
 
   describe("callFunction", () => {
