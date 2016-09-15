@@ -35,6 +35,13 @@ describe("Utils", () => {
       isRelative: true
     })
 
+    matches = modulePath("./path/to/language-salesforce-v1.0.0.Adaptor")
+    assert.deepEqual(matches, {
+      path: './path/to/language-salesforce-v1.0.0',
+      memberName: 'Adaptor',
+      isRelative: true
+    })
+
   })
 
   it(".writeJSON", () => {
