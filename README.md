@@ -47,12 +47,12 @@ Examples:
 
 Use a module in the parent folder, and pick out the `Adaptor` member.
 ```
-diesel execute -l ../language-http.Adaptor -e exp.js -s state.json
+diesl execute -l ../language-http.Adaptor -e exp.js -s state.json
 ```
 
 Use a npm installed module, and pick out the `Adaptor` member.
 ```
-diesel execute -l language-http.Adaptor -e exp.js -s state.json
+diesl execute -l language-http.Adaptor -e exp.js -s state.json
 ```
 
 Compile
