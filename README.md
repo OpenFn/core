@@ -1,4 +1,4 @@
-Diesl
+Diesl [![Build Status](https://travis-ci.org/OpenFn/fn-lang.svg?branch=master)](https://travis-ci.org/OpenFn/fn-lang)
 =====
 
 Language toolkit for OpenFn.
