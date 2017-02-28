@@ -1,7 +1,11 @@
-Diesl [![Build Status](https://travis-ci.org/OpenFn/fn-lang.svg?branch=master)](https://travis-ci.org/OpenFn/fn-lang)
+Diesl (aka fn-lang, aka runner) [![Build Status](https://travis-ci.org/OpenFn/fn-lang.svg?branch=master)](https://travis-ci.org/OpenFn/fn-lang)
 =====
 
-Language toolkit for OpenFn.
+A language toolkit for running OpenFn expressions.
+
+Clone [OpenFn-DevTools](https://github.com/OpenFn/openfn-devtools) for a quick setup environment on your machine.
+
+Check out this [how-to video](https://www.youtube.com/watch?v=aLo9xBrfdCI) on expression writing, using the hosted OpenFn Service.
 
 Features
 --------
@@ -14,12 +18,12 @@ Examples
 
 ### Execute an expression
 
-`diesl compile -l language-salesforce.Adaptor -e expression.js -s data.json`  
+`diesl compile -l language-salesforce.Adaptor -e expression.js -s data.json`
 Returns the output to `STDOUT`, allowing you check for failure/success.
 
 ### Wrap an expression in a script
 
-`diesl compile -l language-salesforce.default -d doclet.json -f expression.js`  
+`diesl compile -l language-salesforce.default -d doclet.json -f expression.js`
 
 Returns a wrapped expression to `STDOUT`, allowing you check the output.
 
@@ -31,7 +35,7 @@ cat state.json | node myExpression.js
 Execute
 -------
 
-`diesl execute`  
+`diesl execute`
 
 Used to convert an expression into an executable script.
 
