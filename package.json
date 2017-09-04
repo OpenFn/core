@@ -1,6 +1,6 @@
 {
-  "name": "diesl",
-  "version": "0.5.6",
+  "name": "fn-lang",
+  "version": "0.6.0",
   "description": "OpenFn Language Toolchain",
   "main": "index.js",
   "bin": "./lib/cli.js",
