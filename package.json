@@ -1,7 +1,7 @@
 {
-  "name": "fn-lang",
-  "version": "0.6.0",
-  "description": "OpenFn Language Toolchain",
+  "name": "core",
+  "version": "0.6.1",
+  "description": "The central job processing program used in the OpenFn platform.",
   "main": "index.js",
   "bin": "./lib/cli.js",
   "scripts": {
