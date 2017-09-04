@@ -17,6 +17,7 @@
     "ast-types": "^0.9.0",
     "doclet-query": "github:openfn/doclet-query#v0.1.0",
     "estemplate": "^0.5.1",
+    "mitm": "^1.3.2",
     "recast": "^0.11.13",
     "yargs": "^3.30.0"
   },

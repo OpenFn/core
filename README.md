@@ -61,7 +61,6 @@ diesl execute -l language-http.Adaptor -e exp.js -s state.json
 
 Compile
 -------
-
 Currently deprecated in this release.
 Execute now does compilation and execution, by unifying these behaviours
 `compile` will be reimplemented to offer deeper debugging tools.
