@@ -1,4 +1,4 @@
-# OpenFn Core [![Build Status](https://travis-ci.org/OpenFn/fn-lang.svg?branch=master)](https://travis-ci.org/OpenFn/fn-lang)
+# OpenFn Core [![Build Status](https://travis-ci.org/OpenFn/core.svg?branch=master)](https://travis-ci.org/OpenFn/core)
 Core is the central job processing program used in the OpenFn platform.
 
 Getting Started
