@@ -1,5 +1,5 @@
-# fn-lang [![Build Status](https://travis-ci.org/OpenFn/fn-lang.svg?branch=master)](https://travis-ci.org/OpenFn/fn-lang)
-A language toolkit for running OpenFn job expressions.
+# OpenFn Core [![Build Status](https://travis-ci.org/OpenFn/fn-lang.svg?branch=master)](https://travis-ci.org/OpenFn/fn-lang)
+Core is the central job processing program used in the OpenFn platform.
 
 Getting Started
 ---------------
