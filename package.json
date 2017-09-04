@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "The central job processing program used in the OpenFn platform.",
   "repository": {
     "type": "git",
