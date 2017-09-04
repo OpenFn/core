@@ -2,6 +2,10 @@
   "name": "core",
   "version": "0.6.1",
   "description": "The central job processing program used in the OpenFn platform.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenFn/core.git"
+  },
   "main": "index.js",
   "bin": "./lib/cli.js",
   "scripts": {
@@ -12,7 +16,7 @@
     "lib/"
   ],
   "author": "Open Function Group",
-  "license": "LGPLv3",
+  "license": "LGPL-3.0",
   "dependencies": {
     "ast-types": "^0.9.0",
     "doclet-query": "github:openfn/doclet-query#v0.1.0",
