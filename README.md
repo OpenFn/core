@@ -44,6 +44,7 @@ cli.js execute -l language-http.Adaptor -e exp.js -s state.json
 Note that only certain parts of Node are whitelisted for use in Core.
 These are the [globals exposed by VM2](https://github.com/patriksimek/vm2/blob/a63bef73e7239f9d14e48280b3c6f6763a5145d5/lib/main.js#L240-L265)
 and those added by the `makeSandbox` utility function. They are:
+
 - Array
 - Boolean
 - Buffer
@@ -73,3 +74,24 @@ and those added by the `makeSandbox` utility function. They are:
 - VMError
 - WeakMap
 - WeakSet
+
+## Notes on execute
+
+```js
+(function(state) {
+  execute(
+    alterState(() => {}),
+    alterState((state) => {}), // function(state) { }
+    alterState(() => {})
+  )(state);
+})(state)
+
+[
+  (alterState(() => {}), alterState(() => {}), alterState(() => {}))
+].reduce((acc, v) => {
+  return v(state).then(acc)
+}, new Promise);
+
+
+f(state).then((state) => return state).then()
+```
