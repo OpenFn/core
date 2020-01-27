@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "The central job processing program used in the OpenFn platform.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "yargs": "^3.30.0"
   },
   "engines": {
-    "node": ">= 6.5.0"
+    "node": ">= 6.11.0"
   },
   "devDependencies": {
     "deep-eql": "0.1.3",
