@@ -1,6 +1,5 @@
 const assert = require('assert');
 const Execute = require('../lib/execute');
-const vm = require('vm');
 
 describe("Execute", () => {
   it("expects an expression", () => {
@@ -22,7 +21,7 @@ describe("Execute", () => {
       let result = Execute({
         expression: `add(1)(state)`,
         state: 1,
-        sandbox: { add: num => state => { return state + num } }
+        extensions: { add: num => state => { return state + num } }
       })
       assert.equal(result, 2)
 
