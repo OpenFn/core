@@ -6,8 +6,9 @@ the expression in this limited access Node VM.
 
 ## Getting Started
 
-Clone [openfn-devTools](https://github.com/OpenFn/openfn-devtools) for a quick setup environment on your machine.  
-Use cli.js execute (described below) to run jobs.
+Clone [openfn-devTools](https://github.com/OpenFn/openfn-devtools) for a quick
+setup environment on your machine. Use cli.js execute (described below) to run
+jobs.
 
 ### Execute
 
@@ -43,37 +44,23 @@ cli.js execute -l language-http.Adaptor -e exp.js -s state.json
 
 Note that only certain parts of Node are whitelisted for use in Core.
 These are the [globals exposed by VM2](https://github.com/patriksimek/vm2/blob/a63bef73e7239f9d14e48280b3c6f6763a5145d5/lib/main.js#L240-L265)
-and those added by the `makeSandbox` utility function. They are:
+and the `extensions` we add for each run:
 
-- Array
-- Boolean
-- Buffer
-- console
-- Date
-- Error
-- EvalError
-- Function
-- JSON
-- Map
-- Number
-- Object
-- parseInt
-- Promise
-- Proxy
-- RangeError
-- ReferenceError
-- Reflect
-- RegExp
-- Set
-- setTimeout
-- String
-- Symbol
-- SyntaxError
-- TypeError
-- URIError
-- VMError
-- WeakMap
-- WeakSet
+```js
+const extensions = Object.assign(
+  {
+    console: argv.noConsole ? disabledConsole : console, // --nc or --noConsole
+    testMode: argv.test, // --t or --test
+    setTimeout, // We allow as Erlang will handle killing long-running VMs.
+  },
+  Adaptor
+);
+```
+
+This means that you'll have access to whatever is exposed by the
+language-package (aka `Adaptor`), `console` (unless blocked by a project
+administrator for OpenFn Platform projects), and `setTimeout`. The `testMode`
+property is used to intercept HTTP requests for offline testing.
 
 ## Writing language-packages
 
