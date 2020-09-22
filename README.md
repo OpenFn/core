@@ -40,6 +40,66 @@ Use a npm installed module, and pick out the `Adaptor` member.
 cli.js execute -l language-http.Adaptor -e exp.js -s state.json
 ```
 
+
+### Execute_noCLI
+
+Used to achieve the same as the CLI/Execute function without the CLI. This way, you do not need local files corresponding to the state or expression, you can use pure javascript with the corresponding end server language to communicate with the end server. 
+
+Usage and Parameters:
+
+```
+Execute_noCLI(expression, state, lan_path)                              [required]
+expression: target expression to execute                                     [required]
+state: incoming message from source application                              [required]
+lan_path: path to the language to be used (e.g. ../language-dhis2.Adaptor)   [required]
+```
+
+Example:
+
+The function assumes that the language-http is installed as per: ```npm install https://github.com/OpenFn/language-http.git```.
+
+```
+var expression = createTEI({
+  trackedEntityType: 'nEenWmSyUEp',
+  orgUnit: 'g8upMTyEZGZ',
+  attributes: [
+    {
+      attribute: 'w75KJ2mc4zz', // Attribute Id for FirstName in DHIS2
+      value: state.form.case.update.patient_first_name //Question in CommCare form
+    },
+    {
+      attribute: 'zDhUuAYrxNC', // LastName attribute
+      value: state.form.case.update.patient_family_name
+    },
+      {
+        attribute: "h5FuguPFF2j", // Case Id
+        value: state.id
+      }/*,
+      {
+        "attribute": "KdQqUHPqlqM", // Case Status
+        "value": dataValue("form.case.update.patient_case_status")(state)
+      }*/
+  ],
+  enrollments: [
+    {
+      orgUnit: 'g8upMTyEZGZ',
+      program: 'IpHINAT79UW', //enroll in Child program
+      enrollmentDate: state.received_on.substring(0, 9),
+      incidentDate: state.metadata.timeStart.substring(0, 9)
+    }
+  ]
+})
+var state = _req.body
+state.configuration = {
+      username: user,
+      password: password,
+      hostUrl: url
+      }
+
+Execute_noCLI(state, expression, '../languages/language-dhis2.Adaptor')
+
+```
+
 ## Debugging
 
 Note that only certain parts of Node are whitelisted for use in Core.
