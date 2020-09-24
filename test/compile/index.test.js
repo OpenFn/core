@@ -38,7 +38,6 @@ describe('Transforms', () => {
 
     it('specifies missing functions', () => {
       result = new Compile(`noExist()`, [verify({ sandbox: {} })]);
-      console.log(JSON.stringify(result, null, 2));
       assert(result.errors.length > 0);
       assert(result.errors[0].message == 'Function not available.');
     });
