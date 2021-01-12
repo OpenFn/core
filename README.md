@@ -40,6 +40,74 @@ Use a npm installed module, and pick out the `Adaptor` member.
 cli.js execute -l language-http.Adaptor -e exp.js -s state.json
 ```
 
+## Using Programmatically
+
+When creating your own runtimes, it makes more sense to call the execution
+code directly in NodeJS instead of via the command line.
+
+```js
+const {
+  Compile,
+  Execute,
+  transforms: { defaultTransforms, verify },
+  sandbox: { buildSandbox, VMGlobals },
+} = require('./lib');
+
+const {
+  modulePath,
+  getModule,
+  readFile,
+  writeJSON,
+  formatCompileError,
+} = require('./lib/utils');
+
+(async function () {
+  const state = JSON.parse(await readFile('./test/fixtures/addState.json'));
+  const code = await readFile('./test/fixtures/addExpression.js.expression');
+  const Adaptor = getModule(modulePath('../language-common'));
+
+  // Setup our initial global object, adding language packs and any other
+  // objects we want on our root.
+  const sandbox = buildSandbox({
+    noConsole: false,
+    testMode: false,
+    extensions: [Adaptor],
+  });
+
+  // Apply some transformations to the code (including a verify step) to
+  // check all function calls are valid.
+  const compile = new Compile(code, [
+    ...defaultTransforms,
+    verify({ sandbox: { ...sandbox, ...VMGlobals} }),
+  ]);
+
+  if (compile.errors.length > 0) {
+    throw new Error(
+      compile.errors.map(err => formatCompileError(code, err)).join('\n')
+    );
+  }
+
+  try {
+    // Run the expression and get the resulting state
+    const finalState = await Execute({
+      expression: compile.toString(),
+      state,
+      sandbox,
+    });
+
+    writeJSON('/tmp/output.json', finalState);
+  } catch (err) {
+    console.error(err);
+  }
+})();
+```
+
+> **NOTE**  
+> We add VMGlobals to the `verify` transform, and not into
+> the sandbox that `Execute` uses, as VM2 provides it's own proxied copies
+> of these functions for each invocation - but we still need the validation
+> step to be aware that these generic functions are available
+
 ## Debugging
 
 Note that only certain parts of Node are whitelisted for use in Core.
