@@ -21,7 +21,7 @@ describe("Execute", () => {
       let result = Execute({
         expression: `add(1)(state)`,
         state: 1,
-        extensions: { add: num => state => { return state + num } }
+        sandbox: { add: num => state => { return state + num } }
       })
       assert.equal(result, 2)
 
