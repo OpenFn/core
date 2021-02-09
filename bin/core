@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 
 yargs(hideBin(process.argv))
-  .command(require('./compile-command'))
-  .command(require('./execute-command'))
+  .command(require('../lib/cli/compile-command'))
+  .command(require('../lib/cli/execute-command'))
   .demandCommand(1, 'must provide a command')
   .help('h')
   .alias('h', 'help')

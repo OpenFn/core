@@ -6,17 +6,31 @@ the expression in this limited access Node VM.
 
 ## Getting Started
 
-Clone [openfn-devTools](https://github.com/OpenFn/openfn-devtools) for a quick
-setup environment on your machine. Use cli.js execute (described below) to run
-jobs.
+It's recommended to start by getting [openfn-devTools](https://github.com/OpenFn/openfn-devtools) 
+setup for a quick development environment on your machine. 
+
+After that you can use `core execute` to run your jobs.
+
+**Install via NPM**
+
+```sh
+npm install @openfn/core
+core
+```
+
+**Via git**
+
+```sh
+git clone git@github.com:OpenFn/core.git
+cd core
+./bin/core
+```
 
 ### Execute
 
-`cli.js execute -l path/to/Adaptor -s ./tmp/state.json -e ./tmp/expression.js -o ./tmp/output.json`
-
 Used to convert an expression into an executable script.
 
-Options:
+**Options**:
 
 ```
 -l, --language    resolvable language/adaptor path                [required]
@@ -26,18 +40,18 @@ Options:
 -t, --test        Intercepts and logs all HTTP requests to console
 ```
 
-Examples:
+**Examples**
 
 Use a module in the parent folder, and pick out the `Adaptor` member.
 
 ```
-cli.js execute -l ../language-http.Adaptor -e exp.js -s state.json
+core execute -l ../language-http.Adaptor -e exp.js -s state.json
 ```
 
 Use a npm installed module, and pick out the `Adaptor` member.
 
 ```
-cli.js execute -l language-http.Adaptor -e exp.js -s state.json
+core execute -l language-http.Adaptor -e exp.js -s state.json
 ```
 
 ## Using Programmatically

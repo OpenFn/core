@@ -7,13 +7,16 @@
     "url": "https://github.com/openfn/core.git"
   },
   "main": "./lib/index.js",
-  "bin": "./lib/cli/index.js",
+  "bin": {
+    "core": "./bin/core"
+  },
   "scripts": {
     "test": "mocha --recursive",
     "test:watch": "mocha -w --recursive"
   },
   "files": [
-    "lib/"
+    "lib/",
+    "bin/"
   ],
   "author": "Open Function Group",
   "license": "LGPL-3.0",
