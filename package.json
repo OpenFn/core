@@ -21,9 +21,9 @@
   "author": "Open Function Group",
   "license": "LGPL-3.0",
   "dependencies": {
+    "@openfn/doclet-query": "^0.0.2",
     "acorn": "^8.0.5",
     "ast-types": "^0.14.2",
-    "doclet-query": "github:openfn/doclet-query#v0.1.0",
     "estemplate": "^0.5.1",
     "fast-safe-stringify": "^2.0.7",
     "mitm": "^1.3.2",
