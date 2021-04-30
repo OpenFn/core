@@ -21,7 +21,7 @@
   "author": "Open Function Group",
   "license": "LGPL-3.0",
   "dependencies": {
-    "@openfn/doclet-query": "^0.0.2",
+    "@openfn/doclet-query": "^0.0.3",
     "acorn": "^8.0.5",
     "ast-types": "^0.14.2",
     "estemplate": "^0.5.1",
