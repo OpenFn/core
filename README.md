@@ -1,4 +1,7 @@
-# OpenFn Core [![Build Status](https://travis-ci.org/OpenFn/core.svg?branch=master)](https://travis-ci.org/OpenFn/core)
+# OpenFn Core
+
+[![Build Status](https://travis-ci.org/OpenFn/core.svg?branch=master)](https://travis-ci.org/OpenFn/core)
+[![CircleCI](https://circleci.com/gh/OpenFn/core.svg?style=svg)](https://circleci.com/gh/OpenFn/core)
 
 Core is the central job processing program used in the OpenFn platform. It
 creates an isolated Node VM, passes in `state` and an `expression`, then runs
