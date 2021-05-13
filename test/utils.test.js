@@ -1,6 +1,5 @@
 const assert = require('assert');
 const {
-  modulePath,
   writeJSON,
   readFile,
   formatCompileError,
@@ -10,7 +9,7 @@ describe('Utils', () => {
   it('.writeJSON', () => {
     return writeJSON('/tmp/output.json', { a: 1 })
       .then(() => readFile('/tmp/output.json'))
-      .then(str => assert.deepEqual({ a: 1 }, JSON.parse(str)));
+      .then(str => assert.deepStrictEqual({ a: 1 }, JSON.parse(str)));
   });
 
   it('.formatCompileError', () => {
@@ -23,6 +22,6 @@ describe('Utils', () => {
       message: 'Bad!',
     });
 
-    assert.equal(expected, result);
+    assert.strictEqual(expected, result);
   });
 });
