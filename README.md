@@ -1,4 +1,4 @@
-# OpenFn/Core [![CircleCI](https://circleci.com/gh/OpenFn/core.svg?style=svg)](https://circleci.com/gh/OpenFn/core)
+# OpenFn/Core [![CircleCI](https://circleci.com/gh/OpenFn/core.svg?style=svg)](https://circleci.com/gh/OpenFn/core) ![npm](https://img.shields.io/npm/dt/@openfn/core)
 
 Core is the central job processing program used in the OpenFn platform. It
 creates an isolated Node VM, passes in `state` and an `expression`, then runs
@@ -6,8 +6,8 @@ the expression in this limited access Node VM.
 
 ## Getting Started
 
-It's recommended to start by getting [openfn-devTools](https://github.com/OpenFn/openfn-devtools) 
-setup for a quick development environment on your machine. 
+It's recommended to start by getting [openfn-devTools](https://github.com/OpenFn/openfn-devtools)
+setup for a quick development environment on your machine.
 
 After that you can use `core execute` to run your jobs.
 
@@ -92,7 +92,7 @@ const {
   // check all function calls are valid.
   const compile = new Compile(code, [
     ...defaultTransforms,
-    verify({ sandbox: { ...sandbox, ...VMGlobals} }),
+    verify({ sandbox: { ...sandbox, ...VMGlobals } }),
   ]);
 
   if (compile.errors.length > 0) {
