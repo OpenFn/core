@@ -1,6 +1,6 @@
 {
   "name": "@openfn/core",
-  "version": "1.4.8",
+  "version": "1.4.10",
   "description": "The central job processing program used by OpenFn integration tools.",
   "repository": {
     "type": "git",
