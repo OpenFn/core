@@ -1,5 +1,7 @@
 const assert = require('assert');
 const Execute = require('../lib/execute');
+const Compile = require('../lib/compile');
+const { defaultTransforms } = require('../lib/compile/transforms')
 
 describe('security', () => {
   it('should allow access to the console object', () => {
@@ -26,4 +28,15 @@ describe('security', () => {
       /require is not defined/
     );
   });
+
+  it('should not compile a job with a class', () => {
+    const code = `fn(() => {
+      class Naughty {}
+    })`
+    assert.throws(() => {
+      new Compile(code, [
+        ...defaultTransforms,
+      ]);
+    }, /Illegal class statement/);
+  })
 });
