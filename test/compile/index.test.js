@@ -5,6 +5,7 @@ const {
   wrapRootExpressions,
   callFunction,
   wrapIIFE,
+  banClasses,
 } = require('../../lib/compile/transforms');
 
 describe('Compile', () => {
@@ -78,6 +79,14 @@ describe('Transforms', () => {
           '})();',
         ].join('\n')
       );
+    });
+  });
+
+  describe('banClasses', () => {
+    it('throws an error if a class statement is detected', () => {
+      assert.throws(() => {
+        new Compile('class Naughty {}', [banClasses()]);
+      }, /Illegal class statement/);
     });
   });
 });
